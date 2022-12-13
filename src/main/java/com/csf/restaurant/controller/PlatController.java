@@ -19,49 +19,49 @@ import com.csf.restaurant.service.RestaurantService;
 
 
 @RestController 
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class PlatController {
 	
 	//autowire the BooksService class  
 		@Autowired  
-		 PlatService rS;  
+		 PlatService pS;  
 
 		//creating a get mapping that retrieves all the books detail from the database   
-		@GetMapping("/ plat")
+		@GetMapping("/plat")
 		
 		private List< Plat> getAllPlats()   
 		{  
-			return rS.getAllPlats();  
+			return pS.getAllPlats();  
 		}  
 
 		//creating a get mapping that retrieves the detail of a specific book  
-		@GetMapping("/ plat/{idPlat}")  
+		@GetMapping("/plat/{idPlat}")  
 		private  Plat getPlat(@PathVariable("idPlat") int idPlat)   
 		{  
-			return rS.getPlatById(idPlat);  
+			return pS.getPlatById(idPlat);  
 		}  
 
 
 		//creating a delete mapping that deletes a specified book  
-		@DeleteMapping("/ plat/{ platid}")  
-		private void deletePlat(@PathVariable(" platid") int id)   
+		@DeleteMapping("/plat/{platid}")  
+		private void deletePlat(@PathVariable("platid") int id)   
 		{  
-			rS.delete(id) ;
+			pS.delete(id) ;
 		} 
 
-		@PostMapping("/ plat")  
-		private int savePlat(@RequestBody  Plat r)   
+		@PostMapping("/plat")  
+		private int savePlat(@RequestBody  Plat p)   
 		{  
-			rS.saveOrUpdate(r);
-			return r.getIdPlat();  
+			pS.saveOrUpdate(p);
+			return p.getIdPlat();  
 		} 
 
 		//creating put mapping that updates the book detail
 		//@CrossOrigin(origins = "*")
-		@PutMapping("/ plat")  
-		private  Plat update(@RequestBody   Plat r)   
+		@PutMapping("/plat")  
+		private  Plat update(@RequestBody   Plat p)   
 		{  
-			rS.saveOrUpdate(r);  
-			return r;  
+			pS.saveOrUpdate(p);  
+			return p;  
 		}  
 }

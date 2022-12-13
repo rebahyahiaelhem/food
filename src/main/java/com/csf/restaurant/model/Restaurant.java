@@ -22,26 +22,27 @@ public class Restaurant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column  
-	private int id;  
+	private int idRestaurant;  
 	@Column  
-	private String name;  
+	private String nameRestaurant;  
 	@Column  
 	private String adresse;
 	@Column  
 	private String phone;
 	@Column  
 	private String photo;
-	public int getId() {
-		return id;
+	
+	public int getIdRestaurant() {
+		return idRestaurant;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdRestaurant(int idRestaurant) {
+		this.idRestaurant = idRestaurant;
 	}
-	public String getName() {
-		return name;
+	public String getNameRestaurant() {
+		return nameRestaurant;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNameRestaurant(String nameRestaurant) {
+		this.nameRestaurant = nameRestaurant;
 	}
 	public String getAdresse() {
 		return adresse;
@@ -63,8 +64,10 @@ public class Restaurant {
 	}
 	@Override
 	public String toString() {
-		return "Restaurant [id=" + id + ", name=" + name + ", adresse=" + adresse + ", phone=" + phone + ", photo="
-				+ photo + "]";
+		return "Restaurant [idRestaurant=" + idRestaurant + ", nameRestaurant=" + nameRestaurant + ", adresse="
+				+ adresse + ", phone=" + phone + ", photo=" + photo + "]";
+	}
+	
 	}
 	
 
@@ -73,4 +76,4 @@ public class Restaurant {
 	
 	
 	
-}
+

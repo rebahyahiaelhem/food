@@ -1,5 +1,6 @@
 package com.csf.restaurant.controller;
 
+
 import java.util.List;  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,10 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.csf.restaurant.model.Client;
-
 import com.csf.restaurant.model.Restaurant;
 import com.csf.restaurant.service.ClientService;
-
 import com.csf.restaurant.service.RestaurantService;
 
 
@@ -26,44 +25,44 @@ public class ClientController {
 	
 	//autowire the BooksService class  
 		@Autowired  
-		ClientService rS;  
+		ClientService cS;  
 
 		//creating a get mapping that retrieves all the books detail from the database   
-		@GetMapping("/ Client")
+		@GetMapping("/Client")
 		
-		private List< Client> getAllClients()   
+		private List<Client> getAllClients()   
 		{  
-			return rS.getAllClients();  
+			return cS.getAllClients();  
 		}  
 
 		//creating a get mapping that retrieves the detail of a specific book  
-		@GetMapping("/ Client/{idClient}")  
-		private  Client getClient(@PathVariable("idClient") int idClient)   
+		@GetMapping("/Client/{idClient}")  
+		private Client getClient(@PathVariable("idClient") int id)   
 		{  
-			return rS.getPlatById(idClient);  
+			return cS.getClientById(id);  
 		}  
 
 
 		//creating a delete mapping that deletes a specified book  
-		@DeleteMapping("/ Client/{ Clientid}")  
-		private void deletePlat(@PathVariable(" Clientid") int idClient)   
+		@DeleteMapping("/Client/{Clientid}")  
+		private void deleteClient(@PathVariable("Clientid") int id)   
 		{  
-			rS.delete(idClient) ;
+			cS.delete(id) ;
 		} 
 
 		@PostMapping("/Client")  
-		private int saveClient(@RequestBody  Client r)   
+		private int saveClient(@RequestBody Client r)   
 		{  
-			rS.saveOrUpdate(r);
+			cS.saveOrUpdate(r);
 			return r.getIdClient();  
 		} 
 
 		//creating put mapping that updates the book detail
 		//@CrossOrigin(origins = "*")
-		@PutMapping("/ Client")  
-		private  Client update(@RequestBody   Client r)   
+		@PutMapping("/Client")  
+		private Client update(@RequestBody  Client r)   
 		{  
-			rS.saveOrUpdate(r);  
+			cS.saveOrUpdate(r);  
 			return r;  
 		}  
 }

@@ -18,7 +18,7 @@ import com.csf.restaurant.service.RestaurantService;
 
 
 @RestController 
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class RestaurantController {
 	
 	//autowire the BooksService class  
@@ -34,25 +34,25 @@ public class RestaurantController {
 		}  
 
 		//creating a get mapping that retrieves the detail of a specific book  
-		@GetMapping("/restaurant/{id}")  
-		private Restaurant getRestaurant(@PathVariable("id") int id)   
+		@GetMapping("/restaurant/{idRestaurant}")  
+		private Restaurant getRestaurant(@PathVariable("ididRestaurant") int idRestaurant)   
 		{  
-			return rS.getRestaurantById(id);  
+			return rS.getRestaurantById(idRestaurant);  
 		}  
 
 
 		//creating a delete mapping that deletes a specified book  
 		@DeleteMapping("/restaurant/{productid}")  
-		private void deleteRestaurant(@PathVariable("productid") int id)   
+		private void deleteRestaurant(@PathVariable("productid") int idRestaurant)   
 		{  
-			rS.delete(id) ;
+			rS.delete(idRestaurant) ;
 		} 
 
 		@PostMapping("/restaurant")  
 		private int saveProduct(@RequestBody Restaurant r)   
 		{  
 			rS.saveOrUpdate(r);
-			return r.getId();  
+			return r.getIdRestaurant();  
 		} 
 
 		//creating put mapping that updates the book detail

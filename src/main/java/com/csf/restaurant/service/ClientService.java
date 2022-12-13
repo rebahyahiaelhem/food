@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.csf.restaurant.repository.ClientRepository;
 
 
-import ch.qos.logback.core.net.server.Client;
+import com.csf.restaurant.model.Client;
 
 
 

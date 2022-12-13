@@ -27,9 +27,9 @@ public class RestaurantService {
 	}  
 
 	//getting a specific record by using the method findById() of CrudRepository  
-	public Restaurant getRestaurantById(int id)   
+	public Restaurant getRestaurantById(int idRestaurant)   
 	{  
-		return Rp.findById(id).get();  
+		return Rp.findById(idRestaurant).get();  
 	}  
 
 
@@ -40,9 +40,9 @@ public class RestaurantService {
 	} 
 
 	//deleting a specific record by using the method deleteById() of CrudRepository  
-	public void delete(int id)   
+	public void delete(int idRestaurant)   
 	{  
-		Rp.deleteById(id);  
+		Rp.deleteById(idRestaurant);  
 	} 
 
 

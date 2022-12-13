@@ -27,13 +27,75 @@ public class Plat {
 	@Column  
 	private String namePlat;  
 	@Column  
-	private String photoPlat;
+	private String photo;
 	@Column  
 	private int pricePlat;
-	@Column  
-	private int cookTime;
+
+	
+	@ManyToOne(optional=false)
+	@JoinColumn(name="idRestaurant", referencedColumnName="idRestaurant")
+	private Restaurant restaurant;
+
+
+	public int getIdPlat() {
+		return idPlat;
+	}
+
+
+	public void setIdPlat(int idPlat) {
+		this.idPlat = idPlat;
+	}
+
+
+	public String getNamePlat() {
+		return namePlat;
+	}
+
+
+	public void setNamePlat(String namePlat) {
+		this.namePlat = namePlat;
+	}
+
+
+	public String getPhoto() {
+		return photo;
+	}
+
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+
+	public int getPricePlat() {
+		return pricePlat;
+	}
+
+
+	public void setPricePlat(int pricePlat) {
+		this.pricePlat = pricePlat;
+	}
+
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Plat [idPlat=" + idPlat + ", namePlat=" + namePlat + ", photo=" + photo + ", pricePlat=" + pricePlat
+				+ ", restaurant=" + restaurant + "]";
+	}
 	
 	
+
 	
+
 	
 }

@@ -1,0 +1,29 @@
+<div class="container">
+    <legend>Create Item</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Name_Plat</label>
+        <input type="text" name="namePlat" [(ngModel)] = "fruitForm.namePlat" class="form-control" id="txtnamePlat" />
+      </div>
+      <div class="mb-3">
+        <label for="txtPrice" class="form-label">Price_Plat</label>
+        <input type="number" name="pricePlat" [(ngModel)] = "fruitForm.pricePlat" class="form-control" id="txtPricePlat" />
+      </div>
+      <div class="mb-3">
+        <label for="txtPhoto" class="form-label">Photo_Plat</label>
+        <input type="text" name="Photo" [(ngModel)] = "fruitForm.photo" class="form-control" id="txtPhoto" />
+      </div>
+
+
+      <div class="mb-3">
+      <select name="restaurant"  [(ngModel)] = "fruitForm.restaurant.idRestaurant" >
+        
+        <option *ngFor="let r of restaurants" [value]="r.idRestaurant">
+            {{r.nameRestaurant}}
+        </option>
+    </select>
+
+  </div>
+      <button type="button" (click)="create()" class="btn btn-primary">Create</button>
+    </form>
+  </div>
